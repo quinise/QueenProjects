@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/*.ts"],
+    "./src/**/*.ts"],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -11,6 +11,10 @@ export default {
       'darkBrown': '#54300c',
       'sunflower': '#f5dd9d',
       'white': '#ffffff',
+      'metaBlue': '#1778f2',
+      'googleBlue': '#4285f4',
+      'green': '#00FF00',
+      'red': '#ff0000'
     }
   },
   plugins: [],

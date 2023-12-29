@@ -1,7 +1,7 @@
 import { html, LitElement, css } from "lit";
 import { customElement } from "lit/decorators.js";
-import bannerIcon from './assets/banner-icon.png';
-import { TWStyles } from './../tw.js';
+import bannerIconPath from './../assets/banner-icon.png';
+import { TWStyles } from './../../tw.js';
 
 @customElement('nav-bar')
 class NavBar extends LitElement { 
@@ -15,7 +15,7 @@ class NavBar extends LitElement {
                     <div class="container mx-auto flex flex-wrap items-center justify-between">
                         <a href="/dashboard" class="cursor-pointer flex items-center">
                             <!-- Brand -->
-                            <img class="mr-3 h-6 md:h-16 md:mr-0 sm:h-8" src=${bannerIcon} alt="crown logo">
+                            <img class="mr-3 h-6 md:h-16 md:mr-0 sm:h-8" src=${bannerIconPath} alt="crown logo">
                         </a>
                         
                         <div class="flex justify-end">
@@ -66,3 +66,9 @@ class NavBar extends LitElement {
         `
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+      'nav-bar': NavBar
+    }
+  }

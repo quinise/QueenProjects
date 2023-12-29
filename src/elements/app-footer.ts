@@ -1,6 +1,6 @@
 import { html, LitElement, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TWStyles } from './../tw.js';
+import { TWStyles } from './../../tw.js';
 
 @customElement('app-footer')
 export class AppFooter extends LitElement {
@@ -17,3 +17,9 @@ export class AppFooter extends LitElement {
         `
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+      'app-footer': AppFooter
+    }
+  }
