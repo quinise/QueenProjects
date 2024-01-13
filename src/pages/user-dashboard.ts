@@ -29,20 +29,24 @@ export class UserDashboard extends LitElement {
   render() {
     return html`
     <nav-bar></nav-bar>
-    <h1 class="mt-60 drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
-    <div class="mx-auto mt-20 grid gap-4 grid-cols-2 w-2/3">
-      <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-      Dummy Project 0
-      </button>
-      <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-      Dummy Project 1
-      </button>
-      <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-      Dummy Project 2
-      </button>
-      <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-      Dummy Project 3
-      </button>
+    <div class="container">
+      <dialog></dialog>
+      <button class="mt-40 ml-80 cursor-pointer w-1/8 p-4 items-center rounded-md border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50"><strong>+</strong></button>
+      <h1 class=" drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
+      <div class="mx-auto mt-20 grid gap-4 grid-cols-2 w-2/3">
+        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+        Dummy Project 0
+        </button>
+        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+        Dummy Project 1
+        </button>
+        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+        Dummy Project 2
+        </button>
+        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+        Dummy Project 3
+        </button>
+      </div>
     </div>
     <app-footer></app-footer>
     `

@@ -15,7 +15,7 @@ export class LoginPage extends LitElement {
   render() {
     return html`
     <nav-bar></nav-bar>
-    <div class="container mt-60">
+    <div class="container mt-40">
       <div class="h-1/2 w-2/3 box-content mx-auto p-4 bg-peach/75">
         <h1 class="mb-4 drop-shadow-lg shadow-darkBrown/50 text-center">Login</h1>
         <div class="flex flex-col space-y-2 justify-center">

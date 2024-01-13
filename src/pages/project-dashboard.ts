@@ -54,4 +54,4 @@ declare global {
     interface HTMLElementTagNameMap {
       'project-dashboard': ProjectDashboard
     }
-  }
+}

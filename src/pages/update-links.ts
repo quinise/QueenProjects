@@ -28,7 +28,7 @@ export class UpdateLinks extends LitElement {
   render() {
     return html`
         <nav-bar></nav-bar>
-        <div class="container mt-60 w-full">
+        <div class="container mt-40 w-full">
             <h1 class="mb-4 drop-shadow-lg shadow-darkBrown/50 text-center">Update Links</h1>
             <div class="mt-10 grid grid-rows-5 grid-flow-col gap-4">
                 <div>
