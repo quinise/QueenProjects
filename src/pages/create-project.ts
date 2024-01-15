@@ -38,7 +38,7 @@ export class CreateProject extends LitElement {
                   <label for="description" class="ml-4 text-darkBrown">Description</label>
                   <textarea rows="4" cols="30" id="description" name="description" class="mt-2 ml-4 border-2 border-darkBrown"></textarea>
                 </div>
-                <button type="submit" class="mb-6 ml-20 cursor-pointer w-1/2 p-2 items-center rounded-md border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">Save Project</button>
+                <!-- <button type="submit" class="mb-6 ml-20 cursor-pointer w-1/2 p-2 items-center rounded-md border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">Save Project</button> -->
               </form>
             </div>
         </div>
