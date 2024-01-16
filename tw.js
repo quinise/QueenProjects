@@ -1252,6 +1252,14 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 1.25rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -3459,6 +3467,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .outline {
   outline-style: solid;
+}
+
+.ring-white {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
 }
 
 .blur {
