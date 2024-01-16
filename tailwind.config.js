@@ -2,7 +2,9 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.ts"],
+    "./src/**/*.ts",
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -17,6 +19,6 @@ export default {
       'red': '#ff0000'
     }
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
 }
 
