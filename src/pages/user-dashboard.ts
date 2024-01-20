@@ -33,8 +33,8 @@ export class UserDashboard extends LitElement {
   @property()
   newClient = '';
 
-  @property()
-  newIsComplete = '';
+  @property({type: Boolean})
+  newIsComplete = false;
 
   @property()
   newDescription = '';
@@ -63,6 +63,18 @@ export class UserDashboard extends LitElement {
   _inputChanged(e: Event) {
     this._submitEnabled = !!(e.target as HTMLInputElement).value;
   }
+
+   private showIncorrectTitleAlert() {
+    alert('Please choose a valid title');
+   }
+
+   private showIncorrectDateAlert() {
+    alert('Please choose a valid date');
+   }
+
+   private showIncorrectIsCompleteAlert() {
+    alert("Please choose a valid completion status");
+   }
 
   private _handleClose(e: Event) {
     console.log(`close ${e}`);
@@ -98,9 +110,20 @@ export class UserDashboard extends LitElement {
     return project
   }
 
+  private newProjectDataValidation() {
+
+    if (!(this._newTitle.value).match(/^[\.a-zA-Z0-9,!? ]*$/)) {this.showIncorrectTitleAlert(); return;}
+    if (!(this._newStartDate.value).match(/^\d{4}-\d{2}-\d{2}$/)) {this.showIncorrectDateAlert(); return;}
+    if (!(this._newEndDate.value).match(/^\d{4}-\d{2}-\d{2}$/) || (this._newStartDate.value > this._newEndDate.value)) {this.showIncorrectDateAlert(); return;}
+    if (!(this._newIsComplete.value).checked) {this.showIncorrectIsCompleteAlert(); return;}
+
+  }
+
   private getNewProjectData(e: Event) {
     e.preventDefault();
     
+    this.newProjectDataValidation();
+
     this.newTitle = this._newTitle.value;
     this.newStartDate = this._newStartDate.value;
     this.newEndDate = this._newEndDate.value;

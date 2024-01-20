@@ -15,7 +15,7 @@ export class LoginPage extends LitElement {
   static styles = [css ``, TWStyles];
 
   private handleGoogleAuth(e: Event) {
-    console.log(e);
+    e.preventDefault();
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider)
   }

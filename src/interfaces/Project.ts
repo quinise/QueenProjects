@@ -7,7 +7,7 @@ export interface Project {
     startDate: string,
     endDate: string,
     client: string,
-    isComplete: string,
+    isComplete: boolean,
     description: string,
     // links: { string: string }
     // features: [Feature],
