@@ -1,13 +1,14 @@
 // This file defines the interface, Project - which describes the atributes of a Project
-import { Feature } from "./Feature"
+// import { Feature } from "./Feature"
 
 export interface Project {
     id: string,
     title: string,
-    startDate: number,
-    endDate: number,
-    isComplete: boolean,
+    startDate: string,
+    endDate: string,
+    client: string,
+    isComplete: string,
     description: string,
-    links: { string: string }
-    features: [Feature],
+    // links: { string: string }
+    // features: [Feature],
 }

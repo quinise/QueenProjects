@@ -1,5 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state, query} from 'lit/decorators.js'
+import { uid } from 'uid';
+import { addProjectToDb } from '../services/addProject.js';
 import { TWStyles } from './../../tw.js';
 
 /**
@@ -23,13 +25,13 @@ export class UserDashboard extends LitElement {
   newTitle = '';
 
   @property()
-  newStartDate = new Date();
+  newStartDate = ''
 
   @property()
-  newEndDate = new Date();
+  newEndDate = ''
 
   @property()
-  newUser = '';
+  newClient = '';
 
   @property()
   newIsComplete = '';
@@ -49,8 +51,8 @@ export class UserDashboard extends LitElement {
   @query('#endDate')
   _newEndDate!: HTMLInputElement;
 
-  @query('#user')
-  _newUser!: HTMLInputElement;
+  @query('#client')
+  _newClient!: HTMLInputElement;
 
   @query('#isComplete')
   _newIsComplete!: HTMLInputElement;
@@ -72,24 +74,47 @@ export class UserDashboard extends LitElement {
     this.renderRoot.querySelector("#data-modal").showModal();
   }
 
-  private submitNewProject(e: Event) {
+
+  private setFormInputToEmpty() {
+    this._newTitle.value = '';
+    this._newStartDate.value = '';
+    this._newEndDate.value = '';
+    this._newClient.value = '';
+    this._newIsComplete.value = '';
+    this._newDescription.value = '';
+  }
+ 
+  private setNewProject() {
+    let project = {
+      id: uid(),
+      title: this.newTitle,
+      startDate: this.newStartDate,
+      endDate: this.newEndDate,
+      client: this.newClient,
+      isComplete: this.newIsComplete,
+      description: this.newDescription
+    }
+
+    return project
+  }
+
+  private getNewProjectData(e: Event) {
     e.preventDefault();
     
     this.newTitle = this._newTitle.value;
     this.newStartDate = this._newStartDate.value;
     this.newEndDate = this._newEndDate.value;
-    this.newUser = this._newUser.value;
+    this.newClient = this._newClient.value;
     this.newIsComplete = this._newIsComplete.value;
     this.newDescription = this._newDescription.value;
 
-    this._newTitle.value = '';
-    this._newStartDate.value = new Date();
-    this._newEndDate.value = new Date();
-    this._newUser.value = '';
-    this._newIsComplete.value = '';
-    this._newDescription.value = '';
+    let project = this.setNewProject();
+    addProjectToDb(project);
 
+    this.setFormInputToEmpty();
     this._submitEnabled = false;
+
+    return console.log(project);
   }
 
   render() {
@@ -118,8 +143,8 @@ export class UserDashboard extends LitElement {
                 <input type="date" id="endDate" @input=${this._inputChanged} name="endDate" class="ml-9 border-2 border-darkBrown" />
               </div>
               <div class="mb-8">
-                <label for="user" class="ml-4 text-darkBrown">User</label>
-                <input type="text" id="user" name="user" @input=${this._inputChanged} class="ml-16 border-2 border-darkBrown" />
+                <label for="client" class="ml-4 text-darkBrown">Client</label>
+                <input type="text" id="client" name="client" @input=${this._inputChanged} class="ml-16 border-2 border-darkBrown" />
               </div>
               <div class="mb-8">
                 <label for="isComplete" class="ml-4 text-darkBrown">Complete</label>
@@ -130,7 +155,7 @@ export class UserDashboard extends LitElement {
                 <textarea rows="4" cols="30" id="description" name="description" @input=${this._inputChanged} class="mt-2 ml-4 border-2 border-darkBrown"></textarea>
               </div>
             <div class="flex items-center justify-end">
-              <button class="px-6 py-2 mr-5 mb-5 text-sm text-white bg-peach rounded-lg outline-none hover:bg-sunflower ring-white" @click=${this.submitNewProject} 
+              <button class="px-6 py-2 mr-5 mb-5 text-sm text-white bg-peach rounded-lg outline-none hover:bg-sunflower ring-white" @click=${this.getNewProjectData} 
                 .disabled=${!this._submitEnabled}
                 >
               Submit
