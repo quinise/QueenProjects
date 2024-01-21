@@ -8,6 +8,7 @@ const addProjectToDb = async (project: Project) => {
   
       await addDoc(projectsRef, {
         id: project.id,
+        title: project.title,
         startDate: project.startDate,
         endDate: project.endDate,
         client: project.client,
