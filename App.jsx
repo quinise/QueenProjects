@@ -13,11 +13,12 @@ import './src/index.css';
 export default function App() {
     return(
         <Routes>
-            <Route path="/" element={<login-page />} />
+            <Route path="/" element={<login-page />} exact/>
             <Route path="/user-dashboard" element={<user-dashboard />} />
             <Route path="/user-settings" element={<user-settings />} />
             <Route path="/update-links" element={<update-links />} />
             <Route path="/project-dashboard" element={<project-dashboard />} />
+            <Route path="/projects/:projectId" element={<project-dashboard />} />
         </Routes>
     )
 }

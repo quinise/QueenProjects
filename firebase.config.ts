@@ -4,11 +4,7 @@ import { getAuth } from 'firebase/auth';
 import firebase from "firebase/compat/app";
 import 'firebase/compat/storage';
 import { getFirestore } from 'firebase/firestore'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB3PX9fHf59HgTbAEgMTWA9Bg4_F0iWcrw",
   authDomain: "queen-projectprogress.firebaseapp.com",

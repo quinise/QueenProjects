@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state, query} from 'lit/decorators.js'
 import { uid } from 'uid';
@@ -187,9 +188,9 @@ export class UserDashboard extends LitElement {
           </form> 
         </div>
       </dialog>
-      <h1 class=" drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
+      <h1 class="drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
       <div class="mx-auto mt-20 grid gap-4 grid-cols-2 w-2/3">
-        <a href=""><button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+        <a href="/projects/project0"><button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
         Dummy Project 0
         </button></a>
         <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">

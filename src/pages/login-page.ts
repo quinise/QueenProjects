@@ -16,6 +16,7 @@ export class LoginPage extends LitElement {
 
   private handleGoogleAuth(e: Event) {
     e.preventDefault();
+    
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider)
   }
