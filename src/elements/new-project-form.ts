@@ -1,5 +1,9 @@
-// This file holds the code for the new project form on the User Dashboard page. In this file input data is validated and on passing is added to a Firestore database.
+/*  This file holds the code for the new project form 
+    on the User Dashboard page. In this file input data 
+    is validated and on passing is added to a Firestore database.
 
+    TODO: query the database to make sure there are no duplicate project titles
+*/
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state, query} from 'lit/decorators.js'
 import { uid } from 'uid';
@@ -127,13 +131,11 @@ export class NewProjectForm extends LitElement {
   }
 
   private _handleClose(e: Event) {
-    console.log(`close ${e}`);
     this.setFormInputToEmpty();
     this.renderRoot.querySelector("#data-modal").close();
   }
 
   private _handleOpen(e: Event) {
-    console.log(`open ${e}`);
     this.renderRoot.querySelector("#data-modal").showModal();
   }
 
