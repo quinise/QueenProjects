@@ -17,17 +17,8 @@ export class UserDashboard extends LitElement {
         <new-project-form></new-project-form>
       </div>
       <h1 class="mt-18 drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
-      <div class="mx-auto mt-20 grid gap-4 grid-cols-2 w-2/3">
+      <div class="mx-auto mt-20 w-1/2">
         <projects-list></projects-list>
-        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-        Dummy Project 1
-        </button>
-        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-        Dummy Project 2
-        </button>
-        <button class="cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-        Dummy Project 3
-        </button>
       </div>
     </div>
     <app-footer></app-footer>

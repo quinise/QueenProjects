@@ -1,13 +1,17 @@
-import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { html, css, LitElement } from "lit";
+import { customElement } from "lit/decorators.js";
 import { Task } from '@lit/task';
-import { Project } from "../interfaces/Project.ts"
 
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config.ts"
 
+import { Project } from "../interfaces/Project.ts"
+import { TWStyles } from './../../tw.js';
+
 @customElement('projects-list')
 export class ProjectsList extends LitElement {
+    static styles = [css ``, TWStyles];
+
     private _getProjectsTask = new Task(this, {
         task: async () => {
             const projectsRef = (collection(db, "projects"));
@@ -15,7 +19,7 @@ export class ProjectsList extends LitElement {
             const querySnapshot = await getDocs(queryProjects);
             const fetchedData: Array<Project> = [];
     
-            const getProjectsPromise = new Promise((resolve, reject) => {
+            const getProjectsPromise = new Promise<Project[] | string>((resolve, reject) => {
                 querySnapshot.forEach((doc) => {
                     const incommingProject: Project = {
                         id: doc.data().id,
@@ -51,12 +55,15 @@ export class ProjectsList extends LitElement {
                   <p>Waiting to start task</p>
                 </div>
                 `,
-              pending: () => html`<div class="mt-40"><p>Loading projects...</p> <p>${console.log("status in loading " + this._getProjectsTask.status)}</p></div>`,
+              pending: () => html`<div class="mt-40"><p>Loading projects...</p></div>`,
               complete: (projects) => html`
-                  <p>${console.log("projects in complete " + projects)}</p>
+                  ${Object(projects).map((project: Project) => html`
+                      <button class="mt-5 cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+                      ${project.title}
+                      </button>                    
+                  `)}
               `,
               error: (e) => html`<p>Error: ${e}</p>
-                <p>${console.log("status in error " + this._getProjectsTask.status)}</p>
                 `
                 })
               }
