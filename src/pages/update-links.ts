@@ -1,3 +1,9 @@
+/*
+This file provides the code for the update links 
+page. The user can input links that will be sent to
+the admin
+
+*/
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { TWStyles } from './../../tw.js';
@@ -11,19 +17,6 @@ import { TWStyles } from './../../tw.js';
 export class UpdateLinks extends LitElement {
 
   static styles = [css ``, TWStyles];
-
-
-  /**
-   * Copy for the read the docs hint.
-   */
-  @property()
-  docsHint = 'Click on the Vite and Lit logos to learn more'
-
-  /**
-   * The number of times the button has been clicked.
-   */
-  @property({ type: Number })
-  count = 0
 
   render() {
     return html`

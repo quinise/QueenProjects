@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './src/pages/login-page.ts';
 import './src/pages/user-dashboard.ts';
 import './src/pages/user-settings.ts';
@@ -17,7 +17,6 @@ export default function App() {
             <Route path="/user-dashboard" element={<user-dashboard />} />
             <Route path="/user-settings" element={<user-settings />} />
             <Route path="/update-links" element={<update-links />} />
-            <Route path="/project-dashboard" element={<project-dashboard />} />
             <Route path="/projects/:projectId" element={<project-dashboard />} />
         </Routes>
     )

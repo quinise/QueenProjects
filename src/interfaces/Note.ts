@@ -1,4 +1,7 @@
-// This file defines the interface, Notes - which describes the atributes of a Feature's Note
+/* This file defines the interface, Notes 
+- which describes the atributes of a Feature's 
+Note
+*/
 export interface Note {
     id: string,
     title: string,

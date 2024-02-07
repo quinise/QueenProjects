@@ -1215,6 +1215,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-top: 10rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1225,10 +1229,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .mt-\\[0\\.15rem\\] {
   margin-top: 0.15rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .box-border {
@@ -2096,10 +2096,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-3 {

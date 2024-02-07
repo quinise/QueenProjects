@@ -1,5 +1,9 @@
+/*
+    This file provides the code that renders the app's footer.
+*/
+
 import { html, LitElement, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 import { TWStyles } from './../../tw.js';
 
 @customElement('app-footer')

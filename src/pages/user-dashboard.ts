@@ -1,3 +1,9 @@
+/*
+This file contains the code for the user's dashbaord
+where they can create a new project,
+view the list of projects.
+*/
+
 import { LitElement, css, html } from 'lit'
 import { customElement} from 'lit/decorators.js'
 import { TWStyles } from './../../tw.js';

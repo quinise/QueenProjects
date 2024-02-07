@@ -1,10 +1,16 @@
-import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+/*
+    This file provides the code that renders the 
+    project's dashboard, a page with project 
+    details. 
+*/
+
+import { createContext, LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { TWStyles } from './../../tw.js';
 
 @customElement('project-dashboard')
 export class ProjectDashboard extends LitElement {
-
+  
   static styles = [css ``, TWStyles];
 
     render() {

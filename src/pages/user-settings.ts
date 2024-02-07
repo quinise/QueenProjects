@@ -1,3 +1,10 @@
+/*
+This file provides the code for the settings page
+where the user can delete their account or switch
+to dark mode.
+
+*/
+
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { TWStyles } from './../../tw.js';

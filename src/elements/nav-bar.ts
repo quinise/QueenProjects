@@ -1,3 +1,7 @@
+/*
+    This file provides the code that renders the app's navbar.
+*/
+
 import { html, LitElement, css } from "lit";
 import { customElement } from "lit/decorators.js";
 import bannerIconPath from './../assets/banner-icon.png';

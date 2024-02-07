@@ -1,4 +1,7 @@
-// This file defines the interface, Feature - which describes the atributes of a Project's feature properties
+/* This file defines the interface, Feature - 
+which describes the atributes of a Project's 
+feature properties
+*/
 import { Note } from "./Note"
 
 export interface Feature {

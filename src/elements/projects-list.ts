@@ -1,5 +1,11 @@
+/*
+    This file provides the code that queries a 
+    Firestore database and renders the a list of 
+    projects with the data.
+*/
+
 import { html, css, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { Task } from '@lit/task';
 
 import { collection, query, getDocs } from "firebase/firestore";
@@ -58,9 +64,9 @@ export class ProjectsList extends LitElement {
               pending: () => html`<div class="mt-40"><p>Loading projects...</p></div>`,
               complete: (projects) => html`
                   ${Object(projects).map((project: Project) => html`
-                      <button class="mt-5 cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+                      <a href="/projects/"><button class="mt-5 cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
                       ${project.title}
-                      </button>                    
+                      </button></a>                    
                   `)}
               `,
               error: (e) => html`<p>Error: ${e}</p>
