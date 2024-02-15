@@ -4,8 +4,10 @@
     details. 
 */
 
-import { createContext, LitElement, css, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import projectFromList from '../services/provideProject.ts';
 import { TWStyles } from './../../tw.js';
 
 @customElement('project-dashboard')
@@ -13,12 +15,15 @@ export class ProjectDashboard extends LitElement {
   
   static styles = [css ``, TWStyles];
 
-    render() {
+  @property({type: Object})
+   projectData = projectFromList.getInstance();
+    
+   render() {
         return html`
         <nav-bar></nav-bar>
         <div class="container mt-40 w-full">
           <h3 class="mb-4 drop-shadow-lg shadow-darkBrown/50 text-center">Project</h3>
-          <h1 class="mb-4 drop-shadow-lg shadow-darkBrown/50 text-center">Project Name</h1>
+          <h1 class="mb-4 drop-shadow-lg shadow-darkBrown/50 text-center">${this.projectData.title}</h1>
           <div class="mx-auto w-full mt-10 grid grid-rows-3 grid-flow-col gap-0">
             <div class="mx-auto">
               <label class="mr-12 text-darkBrown">URL</label>

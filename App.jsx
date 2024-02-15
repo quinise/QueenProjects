@@ -1,13 +1,17 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
+
+
+import './src/elements/nav-bar.ts';
+import './src/elements/app-footer.ts';
+
 import './src/pages/login-page.ts';
 import './src/pages/user-dashboard.ts';
 import './src/pages/user-settings.ts';
 import './src/pages/update-links.ts';
 import './src/pages/project-dashboard.ts';
 import './src/pages/user-settings.ts';
-import './src/elements/nav-bar.ts';
-import './src/elements/app-footer.ts';
+
 import './src/index.css';
 
 export default function App() {

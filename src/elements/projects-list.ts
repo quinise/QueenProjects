@@ -8,15 +8,21 @@ import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { Task } from '@lit/task';
 
+
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config.ts"
 
+import projectFromList from "../services/provideProject.ts"
 import { Project } from "../interfaces/Project.ts"
 import { TWStyles } from './../../tw.js';
 
 @customElement('projects-list')
 export class ProjectsList extends LitElement {
     static styles = [css ``, TWStyles];
+
+    private _provideProject(project: Project) {
+      projectFromList.setInstance(project);
+    }
 
     private _getProjectsTask = new Task(this, {
         task: async () => {
@@ -62,11 +68,14 @@ export class ProjectsList extends LitElement {
                 </div>
                 `,
               pending: () => html`<div class="mt-40"><p>Loading projects...</p></div>`,
-              complete: (projects) => html`
-                  ${Object(projects).map((project: Project) => html`
-                      <a href="/projects/"><button class="mt-5 cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
-                      ${project.title}
-                      </button></a>                    
+              complete: (projects) =>
+              html`
+                  ${Object(projects).map((project: Project) => html`  
+                    <a href="/projects/${project.id}" @click="${()=> this._provideProject(project) }">
+                        <button class="mt-5 cursor-pointer flex flex-col w-full p-6 items-center gap-8 rounded-md border-[1px] border-border_sm bg-sunflower text-darkBrown shadow-lg shadow-darkBrown/50">
+                        ${project.title}
+                        </button>
+                    </a>                    
                   `)}
               `,
               error: (e) => html`<p>Error: ${e}</p>
