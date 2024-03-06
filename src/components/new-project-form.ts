@@ -8,7 +8,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, state, query} from 'lit/decorators.js'
 import { uid } from 'uid';
 import { addProjectToDb } from '../services/addProject.js';
-import { TWStyles } from './../../tw.js';
+import { TWStyles } from '../../tw.js';
 
 @customElement('new-project-form')
 export class NewProjectForm extends LitElement {

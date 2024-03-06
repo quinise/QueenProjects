@@ -7,8 +7,9 @@ view the list of projects.
 import { LitElement, css, html } from 'lit'
 import { customElement} from 'lit/decorators.js'
 import { TWStyles } from './../../tw.js';
-import './../elements/new-project-form.ts';
-import './../elements/projects-list.ts';
+import '../components/new-project-form.ts';
+import '../components/projects-list.ts';
+import '/src/pages/project-dashboard.ts';
 
 @customElement('user-dashboard')
 export class UserDashboard extends LitElement {
@@ -24,7 +25,9 @@ export class UserDashboard extends LitElement {
       </div>
       <h1 class="mt-18 drop-shadow-lg shadow-darkBrown/50 text-center">Projects</h1>
       <div class="mx-auto mt-20 w-1/2">
-        <projects-list></projects-list>
+        <project-dashboard>
+          <projects-list></projects-list>
+        </project-dashboard>
       </div>
     </div>
     <app-footer></app-footer>

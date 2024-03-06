@@ -4,7 +4,7 @@
 
 import { html, LitElement, css } from "lit";
 import { customElement } from "lit/decorators.js";
-import { TWStyles } from './../../tw.js';
+import { TWStyles } from '../../tw.js';
 
 @customElement('app-footer')
 export class AppFooter extends LitElement {

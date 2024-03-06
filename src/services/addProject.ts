@@ -1,6 +1,6 @@
 import { db } from "../../firebase.config.ts"
 import { addDoc, collection} from "firebase/firestore";
-import { Project } from "../interfaces/Project.ts"
+import { Project } from "../types/Project.ts"
 
 const addProjectToDb = async (project: Project) => {
     

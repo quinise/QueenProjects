@@ -5,7 +5,7 @@ login page using GoogleAuthProvider.
 */
 
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from '../../firebase.config.js'
 import { TWStyles } from './../../tw.js';

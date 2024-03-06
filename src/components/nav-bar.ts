@@ -5,7 +5,7 @@
 import { html, LitElement, css } from "lit";
 import { customElement } from "lit/decorators.js";
 import bannerIconPath from './../assets/banner-icon.png';
-import { TWStyles } from './../../tw.js';
+import { TWStyles } from '../../tw.js';
 
 @customElement('nav-bar')
 class NavBar extends LitElement { 
